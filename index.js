@@ -15,26 +15,32 @@ bot.help(ctx => {
   ctx.reply('Not implemented');
 });
 bot.command('hp', ctx => {
-  let [charClass, lvl, mod] = ctx.update.message.text.split(' ').slice(1);
+  try {
+    let [charClass, lvl, mod] = ctx.update.message.text.split(' ').slice(1);
 
-  charClass = charClass.toLowerCase();
-  lvl = Number.parseInt(lvl, 10);
-  mod = Number.parseInt(mod, 10);
+    charClass = charClass.toLowerCase();
+    lvl = Number.parseInt(lvl, 10);
+    mod = Number.parseInt(mod, 10);
 
-  const hpInfo = HP_INFO_FOR_CLASSES[charClass];
+    const hpInfo = HP_INFO_FOR_CLASSES[charClass];
 
-  if (!hpInfo) {
-    ctx.reply(`Класс '${charClass}' не был обнаружен в системе'`);
+    if (!hpInfo) {
+      ctx.reply(`Класс '${charClass}' не был обнаружен в системе'`);
 
-    return;
+      return;
+    }
+
+    const hp = hpInfo.hitDie + (hpInfo.defaultHPForLevel * (lvl - 1)) + (mod * lvl);
+
+    ctx.reply(
+      `${upperFirst(charClass)} ${lvl}-го уровня с модификатором `
+      + `телосложения ${mod} обладает ${hp} хитов`
+    );
+  } catch (err) {
+    console.error(err);
+
+    ctx.reply('Ой-ёй, что-то пошло не по плану...');
   }
-
-  const hp = hpInfo.hitDie + (hpInfo.defaultHPForLevel * (lvl - 1)) + (mod * lvl);
-
-  ctx.reply(
-    `${upperFirst(charClass)} ${lvl}-го уровня с модификатором `
-    + `телосложения ${mod} обладает ${hp} хитов`
-  );
 });
 
 bot.launch();
