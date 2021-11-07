@@ -35,7 +35,7 @@ module.exports = {
     hitDie: 8,
     defaultHPForLevel: 5
   },
-  'черодей': {
+  'чародей': {
     hitDie: 6,
     defaultHPForLevel: 4
   },
