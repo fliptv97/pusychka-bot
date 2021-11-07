@@ -9,7 +9,7 @@ const upperFirst = require('./utils/upper-first');
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
 bot.start(ctx => {
-  ctx.reply('Привет! Я — Пусечка, уникальный помощник одной группы путешественников');
+  ctx.reply('Привет! Я — Пусичка, уникальный помощник одной группы путешественников');
 });
 bot.help(ctx => {
   ctx.reply('Not implemented');
