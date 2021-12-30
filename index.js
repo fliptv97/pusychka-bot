@@ -18,6 +18,12 @@ bot.command('hp', ctx => {
   try {
     let [charClass, lvl, mod] = ctx.update.message.text.split(' ').slice(1);
 
+    if (!charClass || !lvl || !mod) {
+      ctx.reply('Вы указали неверное значение!');
+
+      return;
+    }
+
     charClass = charClass.toLowerCase();
     lvl = Number.parseInt(lvl, 10);
     mod = Number.parseInt(mod, 10);
