@@ -1,4 +1,9 @@
-module.exports = {
+type TClass = {
+  hitDie: number,
+  defaultHPForLevel: number
+}
+
+export const HP_INFO_FOR_CLASSES: Record<string, TClass> = {
   'варвар': {
     hitDie: 12,
     defaultHPForLevel: 7
