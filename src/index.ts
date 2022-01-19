@@ -20,13 +20,19 @@ bot.command('hp', ctx => {
   try {
     const [characterClass, level, modifier] = ctx.update.message.text.split(' ').slice(1);
 
+    if (!characterClass || !level || !modifier) {
+      ctx.reply('Некорректные данные на входе');
+
+      return;
+    }
+
     const parsedLevel = Number.parseInt(level, 10);
     const parsedModifier = Number.parseInt(modifier, 10);
 
     const hpInfo = HP_INFO_FOR_CLASSES[characterClass];
 
     if (!hpInfo) {
-      ctx.reply(`Класс '${characterClass.toLowerCase()}' не был обнаружен в системе'`);
+      ctx.reply(`Класс '${characterClass.toLowerCase()}' не был обнаружен в системе`);
 
       return;
     }
