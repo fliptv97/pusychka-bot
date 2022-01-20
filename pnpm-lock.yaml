@@ -2,21 +2,23 @@ lockfileVersion: 5.3
 
 specifiers:
   '@types/node': ^17.0.10
+  dotenv: ^14.2.0
   esbuild: ^0.14.11
   telegraf: ^4.4.2
 
 dependencies:
-  '@types/node': 17.0.10
+  dotenv: 14.2.0
   telegraf: 4.4.2
 
 devDependencies:
+  '@types/node': 17.0.10
   esbuild: 0.14.11
 
 packages:
 
   /@types/node/17.0.10:
     resolution: {integrity: sha512-S/3xB4KzyFxYGCppyDt68yzBU9ysL88lSdIah4D6cptdcltc4NCPCAMc0+PCpg/lLIyC7IPvj2Z52OJWeIUkog==}
-    dev: false
+    dev: true
 
   /abort-controller/3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -50,6 +52,11 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
+    dev: false
+
+  /dotenv/14.2.0:
+    resolution: {integrity: sha512-05POuPJyPpO6jqzTNweQFfAyMSD4qa4lvsMOWyTRTdpHKy6nnnN+IYWaXF+lHivhBH/ufDKlR4IWCAN3oPnHuw==}
+    engines: {node: '>=12'}
     dev: false
 
   /esbuild-android-arm64/0.14.11:

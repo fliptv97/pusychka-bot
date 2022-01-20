@@ -6,7 +6,7 @@
   "scripts": {
     "build:prod": "esbuild src/index.ts --bundle --minify --outfile=./dist/bundle.js --platform=node",
     "build:dev": "esbuild src/index.ts --bundle --outfile=./dist/bundle.js --platform=node",
-    "start": "npm run build:prod && node dist/bundle.js"
+    "start": "node dist/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/fliptv97/pusychka-bot#readme",
   "dependencies": {
+    "dotenv": "^14.2.0",
     "telegraf": "^4.4.2"
   },
   "devDependencies": {
