@@ -1,15 +1,10 @@
 import { Telegraf } from 'telegraf';
-import { config } from 'dotenv';
 
 // Constants
 import { HP_INFO_FOR_CLASSES } from './constants/hp-info-for-classes';
 
 // Helpers
 import { upperFirst } from './utils';
-
-config({
-  path: '../.env'
-});
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 

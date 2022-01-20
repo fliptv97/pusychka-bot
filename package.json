@@ -4,8 +4,7 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "build:prod": "esbuild src/index.ts --bundle --minify --outfile=./dist/bundle.js --platform=node",
-    "build:dev": "esbuild src/index.ts --bundle --outfile=./dist/bundle.js --platform=node",
+    "build": "node esbuild.config.cjs",
     "start": "node dist/bundle.js"
   },
   "repository": {
